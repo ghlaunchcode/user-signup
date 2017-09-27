@@ -1,0 +1,13 @@
+        .status-condition_ERROR {
+            background-image: -webkit-linear-gradient(left, rgba(255,0,0,255), rgba(255,0,0,0));
+            background-image: -moz-linear-gradient(left, rgba(255,0,0,255), rgba(255,0,0,0));
+            background-image: linear-gradient(to right, rgba(255,0,0,255), rgba(255,0,0,0));
+            border-radius: .5em;
+        }
+
+        .status-condition_ERROR {
+            background-image: -webkit-linear-gradient(right, rgba(255,0,0,255), rgba(255,0,0,.2));
+            background-image: -moz-linear-gradient(right, rgba(255,0,0,255), rgba(255,0,0,.2));
+            background-image: linear-gradient(to left, rgba(255,0,0,255), rgba(255,0,0,.2));
+            border-radius: .5em;
+        }
