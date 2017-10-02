@@ -1,30 +1,26 @@
 from flask import Flask;
 
-g_app = Flask( '[DEBUG]' )
-
-class UserForm:
-
-    #TODO: make constructor
-    def LoadTemplate():
-        return ""
-
-    def Render():
-        strRet = LoadTemplate()
-        return strRet
+g_app = Flask( __name__ )
+g_app.config('[DEBUG]') = True
 
 @g_app.route( "/" ) #no post
 def index( ):
 
-    #TODO: template argument
-    iForm = UserForm()
+    # open template
 
-    return iForm.Render();
 
+    return g_userForm.format( )#TODO)
+
+
+@g_app.route("/", methods="[POST]")
+def verify():
+
+    return ""
 
 
 def main():
     print( "begin main()")
-
+    g_app.run()
     print( "leaving main()")
 
 if __name__ == "__main__":
