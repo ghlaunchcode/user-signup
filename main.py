@@ -18,7 +18,7 @@ g_jinja_env = jinja2.Environment( loader =  jinja2.FileSystemLoader( g_template_
 def index( ):
     # open template
     indexTemplate = g_jinja_env.get_template('index.html')
-    return indexTemplate.render(strUserName = "", strEmail = "")
+    return indexTemplate.render(title="New User")
 
 
 @g_app.route("/", methods=["POST"])
@@ -98,14 +98,14 @@ def verify():
     if isError:
         #TODO: check escaping
         indexTemplate = g_jinja_env.get_template('index.html')
-        return indexTemplate.render( 
+        return indexTemplate.render( title="New User",
             statusUserName = statusUserName, strUserName = usUserName, strerrUserName = strErrUserName,
             statusPassword0 = statusPassword0, strerrPassword0 = strErrPassword0,
             statusPassword1 = statusPassword1, strerrPassword1 = strErrPassword1,
             statusEmail = statusEmail, strEmail = usEmail, strerrEmail = strErrEmail )
     else:
         indexTemplate = g_jinja_env.get_template('welcome.html')
-        return indexTemplate.render( strUserName = usUserName )
+        return indexTemplate.render( title="Home", strUserName = usUserName )
 
 
 def main():

@@ -8,9 +8,91 @@
         <meta charset="UTF-8" />
         <meta name="author" content="polarysekt" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>GSHWeb::{{title}}</title>
+	<style>
+		body {
+			font-family: sans-serif;
+		}
+		h1 {
+			margin: 0;
+			padding: 0;
+			text-shadow: 3px 3px #ccc;
+			color: #009;
+		}
+		h2 {
+			margin: 0;
+			padding: 0;
+			text-shadow: 1px 1px #ccc;
+		}
+		header {
+			display: table;
+			width: 100%;
+		}
+		.headerBarContent {
+			display: table-row;
+		}
+
+		.headerBarContent h1 {
+			display: table-cell;
+		}
+		.headerBarContent p {
+			padding-left: 1em;
+			text-align: left;
+			display: table-cell;
+			font-style: italic;
+		}
+		.headerBarContent .topLinks {
+			text-align: right;
+			display: table-cell;
+		}
+
+		footer {
+
+			display: table;
+			width: 100%;
+		}
+		.footerBarContent {
+			display: table-row;
+		}
+		.footerBarContent .bottomLinks {
+			text-align: left;
+			display: table-cell;
+		}
+		.footerBarContent .copyrightInfo {
+			text-align: right;
+			font-size: 75%;
+		}
+
+		main {
+			padding: 1em;
+		}
+	</style>
     </head>
     <body>
-        {% block content %}
-        {% endblock %}
+	<header>
+		<div class="headerBarContent">
+			<h1>GSHWeb</h1>
+			<p>Where a good slogan is just a thought away...</p>
+			<div class="topLinks">
+			[ various links here ]
+			</div>
+		</div>
+
+		<h2>{{title}}</h2>
+	</header>
+	<main>      
+		{% block content %}
+        	{% endblock %}
+	</main>
+	<footer>
+		<div class="footerBarContent" >
+			<div class="bottomLinks">
+			[ various links here ]
+			</div>
+			<div class="copyrightInfo">
+			Copyright &copy; 2017, Geoffrey Hadler
+			</div>
+		</div>
+	</footer>
     </body>
 </html>

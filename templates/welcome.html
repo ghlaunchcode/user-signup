@@ -1,2 +1,6 @@
-<h1>Welcome, {{strUserName}}!</h1>
+{% extends "boilerplate.html" %}
+
+{% block content %}
+<h3>Welcome, {{strUserName}}!</h3>
 <p>Your account has been created.</p>
+{% endblock %}

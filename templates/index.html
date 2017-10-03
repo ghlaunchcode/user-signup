@@ -1,7 +1,10 @@
+{% extends "boilerplate.html" %}
+
+{% block content %}
 <section name="content">
     <!-- style nearby as reminder -->
     <style>
-        h2 {
+        h3 {
             margin: .1em;
             padding: 0;
         }
@@ -10,9 +13,10 @@
             background: #ccc;
             border: 2pt ridge;
             border-radius: 1em;
-            margin: .5em;
+
             width: 60%;
             padding: 1em;
+		    box-shadow: 3px #ccc;
         }
 
         .encapField {
@@ -72,7 +76,7 @@
     </style>
 
     <form method="POST">
-        <h2>User Signup</h2>
+        <h3>User Signup</h3>
         <hr />
         <div class="encapField">
         <div class="inField"> <!--{{statusUserName}}"> -->
@@ -113,3 +117,4 @@
         </div>
     </form>
 </section>
+{% endblock %}
