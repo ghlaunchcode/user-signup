@@ -77,36 +77,36 @@
         <h2>User Signup</h2>
         <hr />
         <div class="encapField">
-        <div class="inField {statusUserName}">
+        <div class="inField {{statusUserName}}">
         <!--<div class="inField status-condition_ERROR"> -->
             <span class="lineIcon">&rarr;</span>
             <label for="textUserName">User Name:</label>
-            <input type="text" name="textUserName" default="{strUserName}" />
-            <span class="msgError">{strerrUserName}</span>
+            <input type="text" name="textUserName" value="{{strUserName}}" />
+            <span class="msgError">{{strerrUserName}}</span>
             <span class="lineIcon">&larr;</span>
         </div>
-        <div class="inField {statusPassword0}">
+        <div class="inField {{statusPassword0}}">
         <!--<div class="inField status-condition_ERROR">-->
             <span class="lineIcon">&rarr;</span>            
             <label for="textPassword0">Password:</label>
-            <input type="password" name="textPassword0" default="" />
-            <span class="msgError">{strerrPassword0}</span>
+            <input type="password" name="textPassword0" />
+            <span class="msgError">{{strerrPassword0}}</span>
             <span class="lineIcon">&larr;</span>
         </div>
-        <div class="inField {statusPassword1}">
+        <div class="inField {{statusPassword1}}">
         <!--<div class="inField status-condition_ERROR">-->
             <span class="lineIcon">&rarr;</span>            
             <label for="textPassword1">Retype Password:</label>
             <input type="password" name="textPassword1" default="" />
-            <span class="msgError">{strerrPassword1}</span>
+            <span class="msgError">{{strerrPassword1}}</span>
             <span class="lineIcon">&larr;</span>            
         </div>
-        <div class="inField {statusEmail}">
+        <div class="inField {{statusEmail}}">
         <!--<div class="inField status-condition_ERROR">-->
             <span class="lineIcon">&rarr;</span>            
             <label for="textEmail">Email:</label>
-            <input type="text" name="textEmail" default="{strEmail}" />
-            <span class="msgError">{strerrEmail}</span>
+            <input type="text" name="textEmail" value="{{strEmail}}" />
+            <span class="msgError">{{strerrEmail}}</span>
             <span class="lineIcon">&larr;</span>            
         </div>
         </div>

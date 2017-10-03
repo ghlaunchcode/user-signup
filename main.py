@@ -1,5 +1,6 @@
 from flask import Flask, request
 import os
+import cgi
 import jinja2
 
 
@@ -17,7 +18,7 @@ g_jinja_env = jinja2.Environment( loader =  jinja2.FileSystemLoader( g_template_
 def index( ):
     # open template
     indexTemplate = g_jinja_env.get_template('index.html')
-    return indexTemplate.render()
+    return indexTemplate.render(strUserName = "", strEmail = "")
 
 
 @g_app.route("/", methods=["POST"])
@@ -42,10 +43,10 @@ def verify():
     ERRSTR_MATCH_FIELD = "Fields must match!"
     ERRSTR_INVALID_EMAIL = "Field must contain valid email!"
 
-    usUserName = request.form['textUserName']
-    usPassword0 = request.form['textPassword0']
-    usPassword1 = request.form['textPassword1']
-    usEmail = request.form['textEmail']
+    usUserName = cgi.escape( request.form['textUserName'] )
+    usPassword0 = cgi.escape( request.form['textPassword0'] )
+    usPassword1 = cgi.escape( request.form['textPassword1'] )
+    usEmail = cgi.escape( request.form['textEmail'] )
 
     # Check fields for empty
     if usUserName == "":
@@ -99,7 +100,11 @@ def verify():
         strUserName = usUserName
         strEmail = usEmail
         indexTemplate = g_jinja_env.get_template('index.html')
-        return indexTemplate.render(statusUserName = statusUserName, strUserName = strUserName, strErrUserName = strErrUserName )
+        return indexTemplate.render( 
+            statusUserName = statusUserName, strUserName = strUserName, strerrUserName = strErrUserName,
+            statusPassword0 = statusPassword0, strerrPassword0 = strErrPassword0,
+            statusPassword1 = statusPassword1, strerrPassword1 = strErrPassword1,
+            statusEmail = statusEmail, strEmail = strEmail, strerrEmail = strErrEmail )
     else:
         indexTemplate = g_jinja_env.get_template('welcome.html')
         return indexTemplate.render()
