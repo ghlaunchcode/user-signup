@@ -37,11 +37,11 @@ def verify():
     strErrEmail = ""
 
     ERRSTR_STATUS_ERROR = "status-condition_ERROR"
-    ERRSTR_EMPTY_FIELD = "Field is required!"
-    ERRSTR_LENGTH_FIELD = "Field must be 3 to 20 characters!"
-    ERRSTR_SPACES_FIELD = "Field must not contain spaces!"
-    ERRSTR_MATCH_FIELD = "Fields must match!"
-    ERRSTR_INVALID_EMAIL = "Field must contain valid email!"
+    ERRSTR_EMPTY_FIELD = " Field is required!"
+    ERRSTR_LENGTH_FIELD = " Field must be 3 to 20 characters!"
+    ERRSTR_SPACES_FIELD = " Field must not contain spaces!"
+    ERRSTR_MATCH_FIELD = " Fields must match!"
+    ERRSTR_INVALID_EMAIL = " Field must contain valid email!"
 
     usUserName = cgi.escape( request.form['textUserName'] )
     usPassword0 = cgi.escape( request.form['textPassword0'] )
@@ -97,23 +97,21 @@ def verify():
 
     if isError:
         #TODO: check escaping
-        strUserName = usUserName
-        strEmail = usEmail
         indexTemplate = g_jinja_env.get_template('index.html')
         return indexTemplate.render( 
-            statusUserName = statusUserName, strUserName = strUserName, strerrUserName = strErrUserName,
+            statusUserName = statusUserName, strUserName = usUserName, strerrUserName = strErrUserName,
             statusPassword0 = statusPassword0, strerrPassword0 = strErrPassword0,
             statusPassword1 = statusPassword1, strerrPassword1 = strErrPassword1,
-            statusEmail = statusEmail, strEmail = strEmail, strerrEmail = strErrEmail )
+            statusEmail = statusEmail, strEmail = usEmail, strerrEmail = strErrEmail )
     else:
         indexTemplate = g_jinja_env.get_template('welcome.html')
-        return indexTemplate.render()
+        return indexTemplate.render( strUserName = usUserName )
 
 
 def main():
-    print( "begin main()")
+    #print( "begin main()")
     g_app.run()
-    print( "leaving main()")
+    #print( "leaving main()")
 
 if __name__ == "__main__":
     main()

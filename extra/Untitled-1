@@ -11,3 +11,11 @@
             background-image: linear-gradient(to left, rgba(255,0,0,255), rgba(255,0,0,.2));
             border-radius: .5em;
         }
+
+
+        .msgError {
+            visibility: hidden;
+        }
+        .status-condition_ERROR .msgError {
+            visibility: visible;
+        }
