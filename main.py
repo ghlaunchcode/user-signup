@@ -94,6 +94,10 @@ def verify():
             isError = True
             statusEmail = ERRSTR_STATUS_ERROR
             strErrEmail += ERRSTR_INVALID_EMAIL
+        if len(usEmail) < 3 or len(usEmail) > 20:
+            isError = True
+            statusEmail = ERRSTR_STATUS_ERROR
+            strErrEmail += ERRSTR_LENGTH_FIELD
 
     if isError:
         #TODO: check escaping
