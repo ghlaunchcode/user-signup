@@ -14,13 +14,11 @@
             border: 2pt ridge;
             border-radius: 1em;
             margin: .5em;
-            width: 60%;
+            width: 80%;
             padding: 1em;
         }
 
         .encapField {
-             /*table;*/
-            
             width: 100%;
         }
 
@@ -28,7 +26,6 @@
             width: 100%;
             display:flex;
             flex-direction: row;
-            /*display: table-row;*/
             align-items: center;
             border-radius: .5em;
         }
@@ -45,7 +42,6 @@
             font-weight: bold;
             text-align: right;
             width: 16ch;
-            /*display: table-cell;*/
         }
 
         .msgError {
@@ -59,7 +55,6 @@
             font-weight: bold;
             font-size: 200%;
             color: #ff0;
-            /*display: table-cell;*/
             text-align: center;
             vertical-align: middle;
         }
@@ -80,7 +75,6 @@
     <form method="POST">
         <h2>User Signup</h2>
         <hr />
-        <div class="encapField">
         <div class="inField"> <!--{{statusUserName}}"> -->
         <!--<div class="inField status-condition_ERROR"> -->
             <span class="lineIcon">&rarr;</span>
@@ -112,7 +106,6 @@
             <input type="text" name="textEmail" value="{{strEmail}}" class="{{statusEmail}}"/>
             <span class="msgError">{{strerrEmail}}</span>
             <span class="lineIcon">&larr;</span>            
-        </div>
         </div>
         <div class="rightField">
             <input type="submit"/>
