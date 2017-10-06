@@ -79,6 +79,18 @@ def verify():
         statusUserName = ERRSTR_STATUS_ERROR
         strErrUserName += ERRSTR_SPACES_FIELD
 
+    # Password Length 3 - 20 
+    if len( usPassword0 ) < 3 or len( usPassword0 ) > 20:
+        isError = True
+	statusPassword0 = ERRSTR_STATUS_ERROR
+        strErrPassword0 += ERRSTR_LENGTH_FIELD
+
+    #Password Length 3 - 20
+    if len( usPassword1 ) < 3 or len( usPassword1 ) > 20:
+        isError = True
+        statusPassword1 = ERRSTR_STATUS_ERROR
+	strErrPassword1 += ERRSTR_LENGTH_FIELD
+
     # Passwords Match
     if usPassword0 != usPassword1:
         isError = True
